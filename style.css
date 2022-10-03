@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap');
+
 @font-face {
     font-family: "Cascadia Code";
     src: url('/assets/CascadiaCode.woff2') format('woff2');
@@ -78,9 +79,12 @@ footer {
     text-decoration: none;
     color: var(--color);
     word-wrap: break-word;
-    width: 90%;
     max-width: 35em;
     background-color: #fff6cd;
+}
+
+.mix {
+    width: 88%;
 }
 
 .tab {
