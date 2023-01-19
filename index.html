@@ -30,13 +30,15 @@
                 [Link] Tough Act website</a>
         </div>
 
-        <h2>upcoming</h2>
-        <div class="link tab">
-            <table>
-                <tbody id="upcoming">
+        <div id="upcoming-div">
+            <h2>upcoming</h2>
+            <div class="link tab">
+                <table>
+                    <tbody id="upcoming">
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <h2 id="past_gigs">past</h2>
@@ -110,6 +112,7 @@
 
         var cnt = 0;
         const num_past_events = 3;
+        var num_upcoming = 0;
         const options = {
             year: 'numeric',
             month: 'short',
@@ -119,9 +122,20 @@
         const data = {
             "events": [
                 {
+                    "date": "2023-03-18",
+                    "title": "DJ Set",
+                    "name": "Tough Act @ The White Hotel, Manchester",
+                    "link": "https://toughact.fun/tickets"
+                },
+                {
+                    "date": "2023-03-04",
+                    "title": "DJ Set",
+                    "name": "Room 2 @ Førge, Sheffield",
+                },
+                {
                     "date": "2023-01-01",
                     "title": "DJ Set",
-                    "name": "TBA, Manchester"
+                    "name": "Tough Act @ The White Hotel, Manchester"
                 },
                 {
                     "date": "2022-10-28",
@@ -315,6 +329,7 @@
             if (date > now) {
                 upcoming.innerHTML = html + upcoming.innerHTML;
                 links.innerHTML = link + links.innerHTML;
+                num_upcoming++;
             }
             else if (date.toDateString() == now.toDateString()) {
                 upcoming.innerHTML = html_bold + upcoming.innerHTML;
@@ -329,6 +344,10 @@
                 cnt++;
             }
         });
+
+        if (num_upcoming == 0) {
+            document.getElementById('upcoming-div').style.display = 'none';
+        }
 
         foot.innerHTML = 'and ' + (cnt - num_past_events) + ' more...';
 
