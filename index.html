@@ -102,7 +102,7 @@
         </div> -->
     </div>
 
-    <footer> (c) fka hardcore 2022 </footer>
+    <footer> (c) fka hardcore 2023 </footer>
     <script>
         var upcoming = document.getElementById('upcoming');
         var past = document.getElementById('past');
@@ -121,6 +121,29 @@
 
         const data = {
             "events": [
+                {
+                    "date": "2023-08-25",
+                    "title": "DJ Set",
+                    "name": "TBA, Manchester" // DBA
+                },
+                {
+                    "date": "2023-07-22",
+                    "title": "DJ Set",
+                    "name": "TBA, Manchester", // Carlton Club
+                },
+                {
+                    "date": "2023-05-19",
+                    "title": "DJ Set",
+                    "name": "Sister Shindig @ Hootananny, Brixton",
+                    "link": "https://dice.fm/event/ebrqo-sister-shindig-saint-ludo-mia-lily-dj-soyboi-b2b-fka-hardcore-more-19th-may-hootananny-brixton-london-tickets"
+
+                },
+                {
+                    "date": "2023-04-28",
+                    "title": "DJ Set",
+                    "name": "West Art Collective @ Antwerp Mansion, Manchester",
+                    "link": "https://www.skiddle.com/whats-on/Manchester/West-Art-Collective-HQ-%28Antwerp-Mansion%29/West-Art-Collective-presents-Ethereal-at-Antwerp-Mansion/36319418/"
+                },
                 {
                     "date": "2023-03-18",
                     "title": "DJ Set",
@@ -334,6 +357,7 @@
             else if (date.toDateString() == now.toDateString()) {
                 upcoming.innerHTML = html_bold + upcoming.innerHTML;
                 links.innerHTML = link + links.innerHTML;
+                num_upcoming++;
             }
             else {
                 if (cnt < num_past_events) {
