@@ -168,12 +168,14 @@
                 {
                     "date": "2025-08-02",
                     "title": "DJ Set",
-                    "name": "b2b Yyre @ 🏴‍☠️🏴‍☠️🏴‍☠️",
+                    "name": "b2b Yyre @ 🏴‍☠️🏴‍☠️🏴‍☠️🤫",
                 },
                 {
                     "date": "2025-07-09",
                     "title": "DJ Set",
                     "name": "b2b Yyre for Tinder @ Festival Square, Manchester",
+                    "info": "https://factoryinternational.org/whats-on/festival-square-mif25/hot-matches/",
+                    "text": "Tinder presents: Hot Matches @ Festival Square, Manchester"
                 },
                 {
                     "date": "2025-07-04",
@@ -485,11 +487,12 @@
             var html = '<tr><td>' + date.toLocaleDateString('en-GB', options) + '</td><td>[' + event.title + '] ' + event.name + '</td></tr>';
             var html_bold = '<tr><td><b>' + date.toLocaleDateString('en-GB', options) + '</b></td><td><b>[' + event.title + '] ' + event.name + '</b></td></tr>';
 
+            let link = '';
             if (event.link) {
-                var link = '<a class="link" href="' + event.link + '">[Tickets] ' + event.name + '</a>';
-            } else {
-                var link = '';
-            }
+                link = '<a class="link" href="' + event.link + '">[Tickets] ' + event.name + '</a>';
+            } else if (event.info && event.text) {
+                link = '<a class="link" href="' + event.info + '">[Info] ' + event.text + '</a>';
+            } 
 
             if (event.title == 'Radio') {
                 // skip radio shows
